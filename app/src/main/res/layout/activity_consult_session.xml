@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Ajouter"
         tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="91dp" />
+        tools:layout_editor_absoluteY="92dp" />
 
     <TextView
         android:id="@+id/textView"
