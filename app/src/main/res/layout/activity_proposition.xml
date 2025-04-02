@@ -14,29 +14,33 @@
         android:text="CookFusion Lab"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonRecettes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/purple_500"
-        android:textColor="@android:color/white"
+        android:layout_marginTop="218dp"
+        android:layout_marginEnd="130dp"
+        android:backgroundTint="@color/black"
         android:text="Recettes"
+        android:textColor="@android:color/white"
         android:textSize="20dp"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="218dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonSessions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/purple_500"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="1dp"
+        android:backgroundTint="@color/black"
+        android:text="Sessions"
         android:textColor="@android:color/white"
         android:textSize="20dp"
-        android:text="Sessions"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="306dp" />
+        app:layout_constraintEnd_toEndOf="@+id/buttonRecettes"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRecettes" />
 </androidx.constraintlayout.widget.ConstraintLayout>

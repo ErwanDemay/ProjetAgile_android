@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:text="Ajouter"
         android:textSize="25dp"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/black"
         android:textColor="@android:color/white"
         app:layout_constraintTop_toBottomOf="@id/header"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,7 @@
         android:id="@+id/textViewNomRecette"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Nom de la recette"
+        android:text="recette"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonAjouter"
@@ -50,22 +50,7 @@
         app:layout_constraintTop_toBottomOf="@id/buttonAjouter"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <ImageButton
-            android:id="@+id/buttonModifier"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@android:drawable/ic_menu_edit"
-            android:contentDescription="Modifier" />
 
-        <ImageButton
-            android:id="@+id/buttonSupprimer"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent"
-            android:src="@android:drawable/ic_menu_delete"
-            android:contentDescription="Supprimer"
-            android:layout_marginStart="8dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
