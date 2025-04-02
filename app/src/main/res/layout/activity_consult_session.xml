@@ -4,13 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".controleur.sessions.ConsultSessionActivity">
 
     <Button
-        android:id="@+id/buttonConnexion"
+        android:id="@+id/buttonAjouter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Connexion"
+        android:text="Ajouter"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="91dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="gl"
         tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="454dp" />
+        tools:layout_editor_absoluteY="288dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

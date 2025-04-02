@@ -13,6 +13,30 @@
         android:theme="@style/Theme.ProjetAgile"
         tools:targetApi="31">
         <activity
+            android:name=".controleur.sessions.ModifierSessionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controleur.sessions.ConsultSessionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controleur.sessions.AjoutSessionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controleur.recettes.ModifierRecetteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controleur.recettes.AjoutRecetteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controleur.recettes.ConsultRecetteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controleur.PropositionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controleur.ConnexionActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

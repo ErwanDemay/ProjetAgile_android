@@ -4,13 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".controleur.PropositionActivity">
 
     <Button
-        android:id="@+id/buttonConnexion"
+        android:id="@+id/buttonRecettes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Connexion"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="454dp" />
+        android:text="Recettes"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="218dp" />
+
+    <Button
+        android:id="@+id/buttonSessions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sessions"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="306dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

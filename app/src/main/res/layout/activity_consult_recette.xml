@@ -4,13 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".controleur.recettes.ConsultRecetteActivity">
 
     <Button
-        android:id="@+id/buttonConnexion"
+        android:id="@+id/buttonAjouter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Connexion"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="454dp" />
+        android:text="Ajouter"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="91dp" />
+
+    <ListView
+        android:id="@+id/ListViewRecettes"
+        android:layout_width="409dp"
+        android:layout_height="542dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="188dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
