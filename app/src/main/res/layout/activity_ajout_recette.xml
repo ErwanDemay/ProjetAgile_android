@@ -8,6 +8,7 @@
 
     <EditText
         android:id="@+id/editTextNom"
+        android:text="Nom de la recette"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="126dp"
@@ -22,6 +23,7 @@
 
     <EditText
         android:id="@+id/editTextNomDescription"
+        android:text="Description : "
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="26dp"
@@ -35,6 +37,7 @@
 
     <EditText
         android:id="@+id/editTextImage"
+        android:text="Image : "
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="14dp"
@@ -48,6 +51,7 @@
 
     <EditText
         android:id="@+id/editTextType"
+        android:text="Type : "
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="59dp"
