@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".controleur.recettes.AjoutRecetteActivity">
 
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CookFusion Lab"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <EditText
         android:id="@+id/editTextNom"
         android:text="Nom de la recette"
@@ -67,9 +78,12 @@
         android:id="@+id/buttonAjouter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="136dp"
         android:layout_marginBottom="192dp"
+        android:backgroundTint="@color/black"
         android:text="Ajouter"
+        android:textColor="@android:color/white"
+        android:textSize="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextType" />
