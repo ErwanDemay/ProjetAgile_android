@@ -6,117 +6,76 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class BD_SQLiteOpenHelper extends SQLiteOpenHelper {
-    private String visiteur = "CREATE TABLE IF NOT EXISTS visiteur (\n" +
-            "  id text PRIMARY KEY NOT NULL,\n" +
-            "  nom text DEFAULT NULL,\n" +
-            "  prenom text DEFAULT NULL,\n" +
-            "  login text DEFAULT NULL,\n" +
-            "  mdp text DEFAULT NULL,\n" +
-            "  adresse text DEFAULT NULL,\n" +
-            "  cp text DEFAULT NULL,\n" +
-            "  ville text DEFAULT NULL,\n" +
-            "  dateEmbauche text DEFAULT NULL); ";
-    public static final String tables =
-            "--------------------------------------------------------------\n" +
-            "--        Script MySQL.\n" +
-            "--------------------------------------------------------------\n\n" +
-
-            "--------------------------------------------------------------\n" +
-            "-- Table: Utilisateur\n" +
-            "--------------------------------------------------------------\n\n" +
-
-            "CREATE TABLE Utilisateur(\n" +
-            "        id         Int  Int  NOT NULL ,\n" +
-            "        mail       Varchar (100) NOT NULL ,\n" +
-            "        motDePasse Varchar (255) NOT NULL ,\n" +
-            "        role       Varchar (25) NOT NULL\n" +
-            "    ,CONSTRAINT Utilisateur_PK PRIMARY KEY (id)\n" +
-            ")ENGINE=InnoDB;\n\n" +
-
-            "--------------------------------------------------------------\n" +
-            "-- Table: Session\n" +
-            "--------------------------------------------------------------\n\n" +
+    public static final String tables = "CREATE TABLE Utilisateur(\n" +
+            "        id         INTEGER NOT NULL ,\n" +
+            "        mail       VARCHAR (100) NOT NULL ,\n" +
+            "        motDePasse VARCHAR (255) NOT NULL ,\n" +
+            "        role       VARCHAR (25) NOT NULL ,\n" +
+            "        CONSTRAINT Utilisateur_PK PRIMARY KEY (id)\n" +
+            ");\n\n" +
 
             "CREATE TABLE Session(\n" +
-            "        id          Int  Int  NOT NULL ,\n" +
-            "        nomSession  Varchar (100) NOT NULL ,\n" +
-            "        dateSession Date NOT NULL ,\n" +
-            "        heureDebut  Time NOT NULL ,\n" +
-            "        heureFin    Time NOT NULL ,\n" +
-            "        prix        Float NOT NULL ,\n" +
-            "        nbPlaces    Int NOT NULL\n" +
-            "    ,CONSTRAINT Session_PK PRIMARY KEY (id)\n" +
-            ")ENGINE=InnoDB;\n\n" +
-
-            "--------------------------------------------------------------\n" +
-            "-- Table: Type\n" +
-            "--------------------------------------------------------------\n\n" +
+            "        id          INTEGER NOT NULL ,\n" +
+            "        nomSession  VARCHAR (100) NOT NULL ,\n" +
+            "        dateSession DATE NOT NULL ,\n" +
+            "        heureDebut  TIME NOT NULL ,\n" +
+            "        heureFin    TIME NOT NULL ,\n" +
+            "        prix        FLOAT NOT NULL ,\n" +
+            "        nbPlaces    INTEGER NOT NULL ,\n" +
+            "        CONSTRAINT Session_PK PRIMARY KEY (id)\n" +
+            ");\n\n" +
 
             "CREATE TABLE Type(\n" +
-            "        id          Int  Int  NOT NULL ,\n" +
-            "        libelleType Varchar (50) NOT NULL\n" +
-            "    ,CONSTRAINT Type_PK PRIMARY KEY (id)\n" +
-            ")ENGINE=InnoDB;\n\n" +
-
-            "--------------------------------------------------------------\n" +
-            "-- Table: Recette\n" +
-            "--------------------------------------------------------------\n\n" +
+            "        id          INTEGER NOT NULL ,\n" +
+            "        libelleType VARCHAR (50) NOT NULL ,\n" +
+            "        CONSTRAINT Type_PK PRIMARY KEY (id)\n" +
+            ");\n\n" +
 
             "CREATE TABLE Recette(\n" +
-            "        id          Int  Int  NOT NULL ,\n" +
-            "        libelle     Varchar (255) NOT NULL ,\n" +
-            "        description Varchar (1000) NOT NULL ,\n" +
-            "        uneImage    Varchar (255) NOT NULL ,\n" +
-            "        dateAjout   Date NOT NULL ,\n" +
-            "        id_Type     Int NOT NULL\n" +
-            "    ,CONSTRAINT Recette_PK PRIMARY KEY (id)\n" +
-            "\n" +
-            "    ,CONSTRAINT Recette_Type_FK FOREIGN KEY (id_Type) REFERENCES Type(id)\n" +
-            ")ENGINE=InnoDB;\n\n" +
-
-            "--------------------------------------------------------------\n" +
-            "-- Table: Reserver\n" +
-            "--------------------------------------------------------------\n\n" +
+            "        id          INTEGER NOT NULL ,\n" +
+            "        libelle     VARCHAR (255) NOT NULL ,\n" +
+            "        description VARCHAR (1000) NOT NULL ,\n" +
+            "        uneImage    VARCHAR (255) NOT NULL ,\n" +
+            "        dateAjout   DATE NOT NULL ,\n" +
+            "        id_Type     INTEGER NOT NULL ,\n" +
+            "        CONSTRAINT Recette_PK PRIMARY KEY (id) ,\n" +
+            "        CONSTRAINT Recette_Type_FK FOREIGN KEY (id_Type) REFERENCES Type(id)\n" +
+            ");\n\n" +
 
             "CREATE TABLE Reserver(\n" +
-            "        id             Int NOT NULL ,\n" +
-            "        id_Utilisateur Int NOT NULL\n" +
-            "    ,CONSTRAINT Reserver_PK PRIMARY KEY (id,id_Utilisateur)\n" +
-            "\n" +
-            "    ,CONSTRAINT Reserver_Session_FK FOREIGN KEY (id) REFERENCES Session(id)\n" +
-            "    ,CONSTRAINT Reserver_Utilisateur0_FK FOREIGN KEY (id_Utilisateur) REFERENCES Utilisateur(id)\n" +
-            ")ENGINE=InnoDB;\n\n" +
-
-            "--------------------------------------------------------------\n" +
-            "-- Table: Proposer\n" +
-            "--------------------------------------------------------------\n\n" +
+            "        id             INTEGER NOT NULL ,\n" +
+            "        id_Utilisateur INTEGER NOT NULL ,\n" +
+            "        CONSTRAINT Reserver_PK PRIMARY KEY (id, id_Utilisateur) ,\n" +
+            "        CONSTRAINT Reserver_Session_FK FOREIGN KEY (id) REFERENCES Session(id) ,\n" +
+            "        CONSTRAINT Reserver_Utilisateur_FK FOREIGN KEY (id_Utilisateur) REFERENCES Utilisateur(id)\n" +
+            ");\n\n" +
 
             "CREATE TABLE Proposer(\n" +
-            "        id         Int NOT NULL ,\n" +
-            "        id_Session Int NOT NULL\n" +
-            "    ,CONSTRAINT Proposer_PK PRIMARY KEY (id,id_Session)\n" +
-            "\n" +
-            "    ,CONSTRAINT Proposer_Recette_FK FOREIGN KEY (id) REFERENCES Recette(id)\n" +
-            "    ,CONSTRAINT Proposer_Session0_FK FOREIGN KEY (id_Session) REFERENCES Session(id)\n" +
-            ")ENGINE=InnoDB;";
+            "        id         INTEGER NOT NULL ,\n" +
+            "        id_Session INTEGER NOT NULL ,\n" +
+            "        CONSTRAINT Proposer_PK PRIMARY KEY (id, id_Session) ,\n" +
+            "        CONSTRAINT Proposer_Recette_FK FOREIGN KEY (id) REFERENCES Recette(id) ,\n" +
+            "        CONSTRAINT Proposer_Session_FK FOREIGN KEY (id_Session) REFERENCES Session(id)\n" +
+            ");";
+
 
     String jeuDeTest =
-            "INSERT INTO Utilisateur (mail, motDePasse, role) VALUES \n" +
-             "    (1, 'alice@example.com', 'password123', 'admin'), \n" +
-             "    (2, 'bob@example.com', 'password456', 'user'), \n" +
-             "    (3, 'charlie@example.com', 'password789', 'user');\n\n" +
+            "INSERT INTO Utilisateur (id, mail, motDePasse, role) VALUES \n" +
+             "    (1, 'alice@mmb.com', 'motdepasse2fou', 'admin'), \n" +
+             "    (2, 'bob@mbb.com', 'mdp123', 'user'), \n" +
+             "    (3, 'charlie@bbm.com', '321pdm', 'user');\n\n" +
 
              "INSERT INTO Type (id, libelleType) VALUES \n" +
              "    (1, 'Entrée'), \n" +
              "    (2, 'Plat'), \n" +
              "    (3, 'Dessert');\n\n" +
 
-             "INSERT INTO Session (nomSession, dateSession, heureDebut, heureFin, prix, nbPlaces) VALUES \n" +
+             "INSERT INTO Session (id, nomSession, dateSession, heureDebut, heureFin, prix, nbPlaces) VALUES \n" +
              "    (1, 'Session A', '2025-04-10', '10:00:00', '12:00:00', 20.50, 50), \n" +
              "    (2, 'Session B', '2025-04-12', '14:00:00', '16:00:00', 25.00, 40), \n" +
              "    (3, 'Session C', '2025-04-15', '09:00:00', '11:00:00', 30.00, 30);\n\n" +
 
-             "INSERT INTO Recette (libelle, description, uneImage, dateAjout, id_Type) VALUES \n" +
+             "INSERT INTO Recette (id, libelle, description, uneImage, dateAjout, id_Type) VALUES \n" +
              "    (1, 'Salade Végétarienne', 'Une salade pleine de légumes frais et de saveurs', 'salade_vegetarienne.jpg', '2025-04-01', 1), \n" +
              "    (2, 'Poulet Grillé', 'Poulet mariné et grillé avec des épices', 'poulet_grille.jpg', '2025-04-02', 2), \n" +
              "    (3, 'Soupe de Lentilles', 'Une soupe chaude et réconfortante à base de lentilles', 'soupe_lentilles.jpg', '2025-04-03', 3);\n\n" +
