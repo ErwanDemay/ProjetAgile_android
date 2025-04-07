@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,123 +5,226 @@
     android:layout_height="match_parent"
     tools:context=".controleur.sessions.ModifierSessionActivity">
 
+    <!-- TextView pour le champ Nom -->
+    <TextView
+        android:id="@+id/textViewNom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom :"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/editTextNom" />
+
+    <!-- EditText pour le champ Nom -->
     <EditText
         android:id="@+id/editTextNom"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="188dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="14dp"
-        android:layout_weight="1"
-        android:ems="10"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextDate"
+        app:layout_constraintStart_toEndOf="@id/textViewNom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Espacement entre les champs -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        app:layout_constraintTop_toBottomOf="@id/editTextNom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TextView pour le champ Date -->
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date :"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/editTextDate" />
+
+    <!-- EditText pour le champ Date -->
     <EditText
         android:id="@+id/editTextDate"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="17dp"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextHeureDebut"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="date"
+        app:layout_constraintStart_toEndOf="@id/textViewDate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNom" />
+        app:layout_constraintTop_toBottomOf="@id/editTextNom" />
 
+    <!-- Espacement entre les champs -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        app:layout_constraintTop_toBottomOf="@id/editTextDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TextView pour le champ Heure de Début -->
+    <TextView
+        android:id="@+id/textViewHeureDebut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Heure de Début :"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/editTextHeureDebut" />
+
+    <!-- EditText pour le champ Heure de Début -->
     <EditText
         android:id="@+id/editTextHeureDebut"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="14dp"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextHeureFin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="time"
+        app:layout_constraintStart_toEndOf="@id/textViewHeureDebut"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintTop_toBottomOf="@id/editTextDate" />
 
+    <!-- Espacement entre les champs -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        app:layout_constraintTop_toBottomOf="@id/editTextHeureDebut"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TextView pour le champ Heure de Fin -->
+    <TextView
+        android:id="@+id/textViewHeureFin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Heure de Fin :"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/editTextHeureFin" />
+
+    <!-- EditText pour le champ Heure de Fin -->
     <EditText
         android:id="@+id/editTextHeureFin"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="9dp"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPrix"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="time"
+        app:layout_constraintStart_toEndOf="@id/textViewHeureFin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextHeureDebut" />
+        app:layout_constraintTop_toBottomOf="@id/editTextHeureDebut" />
 
+    <!-- Espacement entre les champs -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        app:layout_constraintTop_toBottomOf="@id/editTextHeureFin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TextView pour le champ Prix -->
+    <TextView
+        android:id="@+id/textViewPrix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prix :"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/editTextPrix" />
+
+    <!-- EditText pour le champ Prix -->
     <EditText
         android:id="@+id/editTextPrix"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="9dp"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNbPlaces"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@id/textViewPrix"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextHeureFin" />
+        app:layout_constraintTop_toBottomOf="@id/editTextHeureFin" />
 
+    <!-- Espacement entre les champs -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        app:layout_constraintTop_toBottomOf="@id/editTextPrix"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TextView pour le champ Nombre de Places -->
+    <TextView
+        android:id="@+id/textViewNbPlaces"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre de Places :"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/editTextNbPlaces" />
+
+    <!-- EditText pour le champ Nombre de Places -->
     <EditText
         android:id="@+id/editTextNbPlaces"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="62dp"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAjouter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPrix" />
-
-    <Button
-        android:id="@+id/buttonAjouter"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="100dp"
-        android:text="Ajouter"
-        android:backgroundTint="@color/black"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonASupprimer"
-        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@id/textViewNbPlaces"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextPrix" />
+
+    <!-- Espacement entre les champs -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        app:layout_constraintTop_toBottomOf="@id/editTextNbPlaces"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNbPlaces" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Button Ajouter -->
+
+    <!-- Button Supprimer -->
+
+    <!-- Ajout de marge ici --><![CDATA[
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonAjouter" />
+
+
+
+    ]]>
 
     <Button
         android:id="@+id/buttonASupprimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="8dp"
-        android:text="Supprimer"
         android:backgroundTint="@color/black"
+        android:text="Supprimer"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonAjouter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonAjouter" />
+        tools:layout_editor_absoluteX="242dp"
+        tools:layout_editor_absoluteY="395dp" />
+
+    <Button
+        android:id="@+id/buttonAjouter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="288dp"
+        android:backgroundTint="@color/black"
+        android:text="Ajouter"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/buttonASupprimer"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

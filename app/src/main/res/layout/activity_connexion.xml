@@ -18,6 +18,8 @@
         android:layout_marginTop="32dp" />
 
     <!-- Champ de saisie Nom -->
+
+    <!-- Champ de saisie Mot de passe -->
     <EditText
         android:id="@+id/editTextNom"
         android:layout_width="375dp"
@@ -25,6 +27,7 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/edittext_background"
         android:hint="Nom d'utilisateur"
+        android:textColorHint="@color/black"
         android:inputType="textPersonName"
         android:padding="12dp"
         android:textSize="16sp"
@@ -32,7 +35,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageConnexion" />
 
-    <!-- Champ de saisie Mot de passe -->
     <EditText
         android:id="@+id/editTextMDP"
         android:layout_width="375dp"
@@ -40,6 +42,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/edittext_background"
         android:hint="Mot de passe"
+        android:textColorHint="@color/black"
         android:inputType="textPassword"
         android:padding="12dp"
         android:textSize="16sp"

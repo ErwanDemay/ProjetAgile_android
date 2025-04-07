@@ -8,7 +8,8 @@
 
     <EditText
         android:id="@+id/editTextNom"
-        android:text="Nom"
+        android:hint="Nom"
+        android:textColorHint="@color/black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -20,7 +21,8 @@
 
     <EditText
         android:id="@+id/editTextDate"
-        android:text="Date"
+        android:hint="Date"
+        android:textColorHint="@color/black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -32,7 +34,8 @@
 
     <EditText
         android:id="@+id/editTextHeureDebut"
-        android:text="Heure Début"
+        android:hint="Heure Début"
+        android:textColorHint="@color/black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -44,7 +47,8 @@
 
     <EditText
         android:id="@+id/editTextHeureFin"
-        android:text="Heure Fin"
+        android:hint="Heure Fin"
+        android:textColorHint="@color/black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -56,7 +60,8 @@
 
     <EditText
         android:id="@+id/editTextPrix"
-        android:text="Prix"
+        android:hint="Prix"
+        android:textColorHint="@color/black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -68,7 +73,8 @@
 
     <EditText
         android:id="@+id/editTextNbPlaces"
-        android:text="Nombre de Places"
+        android:hint="Nombre de Places"
+        android:textColorHint="@color/black"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
