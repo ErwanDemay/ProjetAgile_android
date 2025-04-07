@@ -16,26 +16,13 @@ public class BD_SQLiteOpenHelper extends SQLiteOpenHelper {
             "  cp text DEFAULT NULL,\n" +
             "  ville text DEFAULT NULL,\n" +
             "  dateEmbauche text DEFAULT NULL); ";
-    public static final String tables =
-            "--------------------------------------------------------------\n" +
-            "--        Script MySQL.\n" +
-            "--------------------------------------------------------------\n\n" +
-
-            "--------------------------------------------------------------\n" +
-            "-- Table: Utilisateur\n" +
-            "--------------------------------------------------------------\n\n" +
-
-            "CREATE TABLE Utilisateur(\n" +
+    public static final String tables ="CREATE TABLE Utilisateur(\n" +
             "        id         Int  Int  NOT NULL ,\n" +
             "        mail       Varchar (100) NOT NULL ,\n" +
             "        motDePasse Varchar (255) NOT NULL ,\n" +
             "        role       Varchar (25) NOT NULL\n" +
             "    ,CONSTRAINT Utilisateur_PK PRIMARY KEY (id)\n" +
             ")ENGINE=InnoDB;\n\n" +
-
-            "--------------------------------------------------------------\n" +
-            "-- Table: Session\n" +
-            "--------------------------------------------------------------\n\n" +
 
             "CREATE TABLE Session(\n" +
             "        id          Int  Int  NOT NULL ,\n" +
@@ -48,19 +35,11 @@ public class BD_SQLiteOpenHelper extends SQLiteOpenHelper {
             "    ,CONSTRAINT Session_PK PRIMARY KEY (id)\n" +
             ")ENGINE=InnoDB;\n\n" +
 
-            "--------------------------------------------------------------\n" +
-            "-- Table: Type\n" +
-            "--------------------------------------------------------------\n\n" +
-
             "CREATE TABLE Type(\n" +
             "        id          Int  Int  NOT NULL ,\n" +
             "        libelleType Varchar (50) NOT NULL\n" +
             "    ,CONSTRAINT Type_PK PRIMARY KEY (id)\n" +
             ")ENGINE=InnoDB;\n\n" +
-
-            "--------------------------------------------------------------\n" +
-            "-- Table: Recette\n" +
-            "--------------------------------------------------------------\n\n" +
 
             "CREATE TABLE Recette(\n" +
             "        id          Int  Int  NOT NULL ,\n" +
@@ -72,11 +51,7 @@ public class BD_SQLiteOpenHelper extends SQLiteOpenHelper {
             "    ,CONSTRAINT Recette_PK PRIMARY KEY (id)\n" +
             "\n" +
             "    ,CONSTRAINT Recette_Type_FK FOREIGN KEY (id_Type) REFERENCES Type(id)\n" +
-            ")ENGINE=InnoDB;\n\n" +
-
-            "--------------------------------------------------------------\n" +
-            "-- Table: Reserver\n" +
-            "--------------------------------------------------------------\n\n" +
+            ");\n\n" +
 
             "CREATE TABLE Reserver(\n" +
             "        id             Int NOT NULL ,\n" +
@@ -85,11 +60,7 @@ public class BD_SQLiteOpenHelper extends SQLiteOpenHelper {
             "\n" +
             "    ,CONSTRAINT Reserver_Session_FK FOREIGN KEY (id) REFERENCES Session(id)\n" +
             "    ,CONSTRAINT Reserver_Utilisateur0_FK FOREIGN KEY (id_Utilisateur) REFERENCES Utilisateur(id)\n" +
-            ")ENGINE=InnoDB;\n\n" +
-
-            "--------------------------------------------------------------\n" +
-            "-- Table: Proposer\n" +
-            "--------------------------------------------------------------\n\n" +
+            ");\n\n" +
 
             "CREATE TABLE Proposer(\n" +
             "        id         Int NOT NULL ,\n" +
@@ -98,7 +69,7 @@ public class BD_SQLiteOpenHelper extends SQLiteOpenHelper {
             "\n" +
             "    ,CONSTRAINT Proposer_Recette_FK FOREIGN KEY (id) REFERENCES Recette(id)\n" +
             "    ,CONSTRAINT Proposer_Session0_FK FOREIGN KEY (id_Session) REFERENCES Session(id)\n" +
-            ")ENGINE=InnoDB;";
+            ");";
 
     String jeuDeTest =
             "INSERT INTO Utilisateur (mail, motDePasse, role) VALUES \n" +
