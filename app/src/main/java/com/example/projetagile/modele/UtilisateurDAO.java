@@ -49,53 +49,26 @@ public class UtilisateurDAO{
         return listeUtilisteur;
     }
 
-    //Pour quand on aura l'API
-    /*public Utilisateur seConnecter(String unIdentifiant, String unMotDePasse){
-        String result = "";
-        //adresse de l'URL de l\'API à interroger et fichier php permettant d'\ajouter le visiteur
-        String myUrl = "https://blackmythwukong.alwaysdata.net/API/getVisiteurs.php?";
-        //informations à transmettre pour effectuer l'ajout
-        String params = "login="+unIdentifiant+
-                "&mdp="+unMotDePasse;
-        Log.d("requete", params);
+    public Utilisateur seConnecter(String unIdentifiant, String unMotDePasse){
+        Utilisateur unUtilisateur = null;
+        ArrayList<Utilisateur> lesUtilisateurs = new ArrayList<Utilisateur>();
+        SQLiteDatabase db = accesBD.getReadableDatabase();
+        String query = "SELECT * FROM utilisateur WHERE mail = ? AND motDePasse = ?";
+        Cursor cursor = db.rawQuery(query, new String[]{unIdentifiant, unMotDePasse});
 
-        Visiteur leVisiteur = null;
+        if (cursor != null && cursor.moveToFirst()){
+            unUtilisateur = new Utilisateur(
+                    cursor.getString(cursor.getColumnIndexOrThrow("id")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("mail")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("motDePasse")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("role"))
+            );
+            cursor.close();
+            db.close();
 
-        HttpPostRequest postRequest = new HttpPostRequest();
-        try {
-            result = postRequest.execute(new String[]{myUrl, params}).get();
-            //Log.d("resultat",result.);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
+            return unUtilisateur;
+        }else{
+            return null;
         }
-
-        try{
-            JSONArray array = new JSONArray(result);
-
-            for (int i = 0; i < array.length(); i++) {
-                if (unIdentifiant.equals(array.getJSONObject(i).getString("login"))){
-                    if (unMotDePasse.equals(array.getJSONObject(i).getString("mdp")){
-                        String id = array.getJSONObject(i).getString("id");
-                        String nom = array.getJSONObject(i).getString("nom");
-                        String prenom = array.getJSONObject(i).getString("prenom");
-                        String login = array.getJSONObject(i).getString("login");
-                        String mdp = array.getJSONObject(i).getString("mdp");
-                        String adresse = array.getJSONObject(i).getString("adresse");
-                        String cp = array.getJSONObject(i).getString("cp");
-                        String ville = array.getJSONObject(i).getString("ville");
-                        String dateEmbauche = array.getJSONObject(i).getString("dateEmbauche");
-
-                        leVisiteur = new Visiteur(id, nom, prenom, login, mdp, adresse, cp, ville, dateEmbauche);
-                    }
-                }
-
-            }
-        }catch(JSONException e) {
-            e.printStackTrace();
-        }
-
-        return leVisiteur;
-    }*/
+    }
 }
