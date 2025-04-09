@@ -89,4 +89,9 @@ public class Recette {
         values.put(COL_ID_TYPE, idType);
         return values;
     }
+
+    @Override
+    public String toString(){
+        return this.getLibelle()+" - "+this.getDateAjout();
+    }
 }
