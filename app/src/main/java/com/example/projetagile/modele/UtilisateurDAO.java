@@ -18,7 +18,7 @@ import com.example.projetagile.modele.Utilisateur;
 
 public class UtilisateurDAO{
 
-    private static String base = "Utilisateur";
+    private static String base = "CookFusion";
     private static int version = 1;
     private BD_SQLiteOpenHelper accesBD;
 
