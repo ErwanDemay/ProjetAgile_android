@@ -48,6 +48,7 @@ public class ConsultRecetteActivity extends AppCompatActivity {
             Recette recetteSelectionne = (Recette) parent.getItemAtPosition(position);
 
             Intent intent = new Intent(ConsultRecetteActivity.this, ModifierRecetteActivity.class);
+            intent.putExtra("id",recetteSelectionne.getId());
             intent.putExtra("nom", recetteSelectionne.getLibelle());
             intent.putExtra("description", recetteSelectionne.getDescription());
             intent.putExtra("type", recetteSelectionne.getIdType());
