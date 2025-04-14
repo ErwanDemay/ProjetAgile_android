@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Button;
 import android.util.Log;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class ModifierRecetteActivity extends AppCompatActivity {
@@ -21,8 +22,7 @@ public class ModifierRecetteActivity extends AppCompatActivity {
     Button buttonASupprimer;
     EditText editTextNom;
     EditText editTextDescription;
-    EditText editTextImage;
-
+    Spinner spinnerType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,17 +32,20 @@ public class ModifierRecetteActivity extends AppCompatActivity {
         buttonASupprimer = findViewById(R.id.buttonASupprimer);
         editTextNom = findViewById(R.id.editTextNom);
         editTextDescription = findViewById(R.id.editTextNomDescription);
-        editTextImage = findViewById(R.id.editTextImage);
+        spinnerType = findViewById(R.id.spinnerType);
 
         String ancNom = editTextNom.toString();
         String ancDesc = editTextDescription.toString();
-        String ancImg = editTextImage.toString();
+
+        // Récupération de l'ID en fonction du type sélectionné
+        int position = spinnerType.getSelectedItemPosition(); // 0 = Entrée, 1 = Plat, 2 = Dessert
+        int idType = position + 1; // Entrée = 1, Plat = 2, Dessert = 3
+
 
         Intent intent = getIntent();
         if (intent != null) {
             editTextNom.setText(intent.getStringExtra("nom"));
             editTextDescription.setText(intent.getStringExtra("description"));
-            editTextImage.setText(intent.getStringExtra("image"));
         }
 
         buttonAjouter.setOnClickListener(new View.OnClickListener() {

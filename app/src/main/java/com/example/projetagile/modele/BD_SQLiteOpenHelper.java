@@ -35,16 +35,15 @@ public class BD_SQLiteOpenHelper extends SQLiteOpenHelper {
 
     private static final String tableRecette =
             "CREATE TABLE Recette(\n" +
-            "        id          Int  Int  NOT NULL ,\n" +
-            "        libelle     Varchar (255) NOT NULL ,\n" +
-            "        description Varchar (1000) NOT NULL ,\n" +
-            "        uneImage    Varchar (255) NOT NULL ,\n" +
-            "        dateAjout   Date NOT NULL ,\n" +
-            "        id_Type     Int NOT NULL\n" +
-            "    ,CONSTRAINT Recette_PK PRIMARY KEY (id)\n" +
-            "\n" +
-            "    ,CONSTRAINT Recette_Type_FK FOREIGN KEY (id_Type) REFERENCES Type(id)\n" +
-            ");\n\n";
+                    "    id INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
+                    "    libelle VARCHAR(255) NOT NULL,\n" +
+                    "    description VARCHAR(1000) NOT NULL,\n" +
+                    "    uneImage VARCHAR(255),\n" +
+                    "    dateAjout DATE NOT NULL,\n" +
+                    "    id_Type INTEGER NOT NULL,\n" +
+                    "    CONSTRAINT Recette_Type_FK FOREIGN KEY (id_Type) REFERENCES Type(id)\n" +
+                    ");";
+
 
     private static final String tableReserver =
             "CREATE TABLE Reserver(\n" +

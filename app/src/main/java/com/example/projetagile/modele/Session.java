@@ -101,4 +101,9 @@ public class Session {
         values.put(COL_NB_PLACES, nbPlaces);
         return values;
     }
+
+    @Override
+    public String toString(){
+        return this.getNomSession()+" - "+this.getDateSession()+" - " + this.getHeureDebut();
+    }
 }

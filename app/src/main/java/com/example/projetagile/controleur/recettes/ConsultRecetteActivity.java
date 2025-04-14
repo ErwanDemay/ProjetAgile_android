@@ -50,7 +50,7 @@ public class ConsultRecetteActivity extends AppCompatActivity {
             Intent intent = new Intent(ConsultRecetteActivity.this, ModifierRecetteActivity.class);
             intent.putExtra("nom", recetteSelectionne.getLibelle());
             intent.putExtra("description", recetteSelectionne.getDescription());
-            intent.putExtra("image", recetteSelectionne.getUneImage());
+            intent.putExtra("type", recetteSelectionne.getIdType());
 
             startActivity(intent);
         });

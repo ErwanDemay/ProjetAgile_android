@@ -31,31 +31,17 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextImage"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerType"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/editTextNom" />
-
-    <EditText
-        android:id="@+id/editTextImage"
-        android:hint="Image"
-        android:textColorHint="@color/black"
-        android:layout_width="0dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="296dp"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinnerType"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/editTextImage"
+        app:layout_constraintTop_toBottomOf="@id/editTextNomDescription"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -80,6 +66,6 @@
         android:backgroundTint="@color/black"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextType" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAjouter" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
