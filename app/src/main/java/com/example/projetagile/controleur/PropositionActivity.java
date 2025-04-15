@@ -18,6 +18,8 @@ public class PropositionActivity extends AppCompatActivity {
 
     private Button buttonRecettes;
     private Button buttonSessions;
+    private Button buttonSyncToSGBD;
+    private Button buttonSyncToLocal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,8 @@ public class PropositionActivity extends AppCompatActivity {
 
         buttonRecettes = findViewById(R.id.buttonRecettes);
         buttonSessions = findViewById(R.id.buttonSessions);
+        buttonSyncToSGBD = findViewById(R.id.buttonSyncToSGBD);
+        buttonSyncToLocal = findViewById(R.id.buttonSyncToLocal);
 
         buttonRecettes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +37,18 @@ public class PropositionActivity extends AppCompatActivity {
             }
         });
         buttonSessions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ouvrirSessions();
+            }
+        });
+        buttonSyncToSGBD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ouvrirSessions();
+            }
+        });
+        buttonSyncToLocal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ouvrirSessions();
