@@ -77,12 +77,25 @@ public class RecetteDAO {
         Log.d("DEBUG", "La recette a été ajoutée avec succès !");
     }
 
-    public boolean deleteVisiteur(String id) {
-        database = accesBD.getReadableDatabase();
-        int rowsDeleted = database.delete("Recette", "id = ?", new String[]{id});
+    public void supprimerRecette(int idRecette) {
+        database = accesBD.getWritableDatabase();
+        database.delete("Recette", "id = ?", new String[]{String.valueOf(idRecette)});
+        database.close();
+    }
+
+
+    public void modifierRecette(int idRecette, String nouveauNom, String nouvelleDescription, int nouveauType) {
+        database = accesBD.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("libelle", nouveauNom);
+        values.put("description", nouvelleDescription);
+        values.put("id_Type", nouveauType);
+
+        database.update("Recette", values, "id = ?", new String[]{String.valueOf(idRecette)});
         database.close();
 
-        return rowsDeleted > 0;
+        Log.d("DEBUG", "Recette modifiée avec succès !");
     }
 
 
