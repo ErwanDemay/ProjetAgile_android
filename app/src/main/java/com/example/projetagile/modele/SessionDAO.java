@@ -1,5 +1,7 @@
 package com.example.projetagile.modele;
 
+import com.example.projetagile.modele.HttpPostRequest;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
@@ -50,34 +52,35 @@ public class SessionDAO {
         return listeSession;
     }
 
-    /*public String SyncToSGBD(Session uneSessionson) {
+    public void SyncToSGBD() {
+        ArrayList<Session> lesSessions = this.cursorToSessionsArrayList();
+
         String result = "";
         //adresse de l'URL de l\'API à interroger et fichier php permettant d'\ajouter le visiteur
-        String myUrl="https://mancisidor.alwaysdata.net/API/addVisiteur.php?";
+        String myUrl="http://mancisidor.alwaysdata.net/API/cookfusionlab_setSession.php?";
         //informations à transmettre pour effectuer l'ajout
-        String params =
-                "id="+unVisiteur.getId()+
-                        "&nom="+unVisiteur.getNom()+
-                        "&prenom="+unVisiteur.getPrenom()+
-                        "&login="+unVisiteur.getLogin()+
-                        "&mdp="+unVisiteur.getMdp()+
-                        "&adresse="+unVisiteur.getAdresse()+
-                        "&cp="+unVisiteur.getCp()+
-                        "&ville="+unVisiteur.getVille()+
-                        "&dateEmbauche="+unVisiteur.getDateEmbauche();
-        Log.d("requete",params);
+        for(Session uneSession : lesSessions){
+            String params =
+                    "nomSession="+uneSession.getNomSession()+
+                            "&dateSession="+uneSession.getDateSession()+
+                            "&heureDebut="+uneSession.getHeureDebut()+
+                            "&heureFin="+uneSession.getHeureFin()+
+                            "&prix="+uneSession.getPrix()+
+                            "&nbPlaces="+uneSession.getNbPlaces();
+            Log.d("requete",params);
 
-        HttpPostRequest postRequest = new HttpPostRequest();
-        try{
-            result = postRequest.execute(new String []{myUrl, params}).get();
-            //Log.d("resultat",result.);
+            HttpPostRequest postRequest = new HttpPostRequest();
+
+            try{
+                result = postRequest.execute(new String []{myUrl, params}).get();
+                //Log.d("resultat",result.);
+            }
+            catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
         }
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-        return result;
-    }*/
+    }
 
 }

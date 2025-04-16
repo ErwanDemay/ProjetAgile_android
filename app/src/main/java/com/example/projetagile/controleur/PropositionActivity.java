@@ -13,6 +13,7 @@ import com.example.projetagile.controleur.sessions.ConsultSessionActivity;
 import android.os.Bundle;
 
 import com.example.projetagile.R;
+import com.example.projetagile.modele.SessionDAO;
 
 public class PropositionActivity extends AppCompatActivity {
 
@@ -45,7 +46,7 @@ public class PropositionActivity extends AppCompatActivity {
         buttonSyncToSGBD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ouvrirSessions();
+                synctoSGDB();
             }
         });
         buttonSyncToLocal.setOnClickListener(new View.OnClickListener() {
@@ -63,5 +64,10 @@ public class PropositionActivity extends AppCompatActivity {
     protected void ouvrirSessions() {
         Intent intent = new Intent(this, ConsultSessionActivity.class);
         startActivity(intent);
+    }
+
+    protected void synctoSGDB() {
+        SessionDAO sessionDAO = new SessionDAO(this);
+        sessionDAO.SyncToSGBD();
     }
 }
