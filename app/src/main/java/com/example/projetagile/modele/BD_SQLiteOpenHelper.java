@@ -18,9 +18,9 @@ public class BD_SQLiteOpenHelper extends SQLiteOpenHelper {
             "CREATE TABLE Session(\n" +
             "        id          Int  Int  NOT NULL ,\n" +
             "        nomSession  Varchar (100) NOT NULL ,\n" +
-            "        dateSession Date NOT NULL ,\n" +
-            "        heureDebut  Time NOT NULL ,\n" +
-            "        heureFin    Time NOT NULL ,\n" +
+            "        dateSession Varchar (25) NOT NULL ,\n" +
+            "        heureDebut  Varchar (25) NOT NULL ,\n" +
+            "        heureFin    Varchar (25) NOT NULL ,\n" +
             "        prix        Float NOT NULL ,\n" +
             "        nbPlaces    Int NOT NULL\n" +
             "    ,CONSTRAINT Session_PK PRIMARY KEY (id)\n" +
@@ -39,11 +39,10 @@ public class BD_SQLiteOpenHelper extends SQLiteOpenHelper {
                     "    libelle VARCHAR(255) NOT NULL,\n" +
                     "    description VARCHAR(1000) NOT NULL,\n" +
                     "    uneImage VARCHAR(255),\n" +
-                    "    dateAjout DATE NOT NULL,\n" +
+                    "    dateAjout Varchar (25) NOT NULL,\n" +
                     "    id_Type INTEGER NOT NULL,\n" +
                     "    CONSTRAINT Recette_Type_FK FOREIGN KEY (id_Type) REFERENCES Type(id)\n" +
                     ");";
-
 
     private static final String tableReserver =
             "CREATE TABLE Reserver(\n" +
@@ -57,12 +56,11 @@ public class BD_SQLiteOpenHelper extends SQLiteOpenHelper {
 
     private static final String tableProposer =
             "CREATE TABLE Proposer(\n" +
-            "        id         Int NOT NULL ,\n" +
-            "        id_Session Int NOT NULL\n" +
-            "    ,CONSTRAINT Proposer_PK PRIMARY KEY (id,id_Session)\n" +
+            "        idRecette  Int NOT NULL,\n" +
+            "        idSession  Int NOT NULL\n" +
             "\n" +
-            "    ,CONSTRAINT Proposer_Recette_FK FOREIGN KEY (id) REFERENCES Recette(id)\n" +
-            "    ,CONSTRAINT Proposer_Session0_FK FOREIGN KEY (id_Session) REFERENCES Session(id)\n" +
+            "    ,CONSTRAINT Proposer_Recette_FK FOREIGN KEY (idRecette) REFERENCES Recette(id)\n" +
+            "    ,CONSTRAINT Proposer_Session_FK FOREIGN KEY (idSession) REFERENCES Session(id)\n" +
             ");";
 
     private static final String jdtUtilisateur =
@@ -96,7 +94,7 @@ public class BD_SQLiteOpenHelper extends SQLiteOpenHelper {
              "    (3, 3);  -- Charlie réserve la session 3\n\n";
 
     private static final String jdtProposer =
-             "INSERT INTO Proposer (id, id_Session) VALUES \n" +
+             "INSERT INTO Proposer (idRecette, idSession) VALUES \n" +
              "    (1, 1),  -- La recette 1 est proposée pour la session 1 \n" +
              "    (2, 2),  -- La recette 2 est proposée pour la session 2 \n" +
              "    (3, 3);  -- La recette 3 est proposée pour la session 3";

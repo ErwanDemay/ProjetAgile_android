@@ -4,11 +4,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class SessionDAO {
     private static String base = "CookFusion";
@@ -47,5 +49,35 @@ public class SessionDAO {
 
         return listeSession;
     }
+
+    /*public String SyncToSGBD(Session uneSessionson) {
+        String result = "";
+        //adresse de l'URL de l\'API à interroger et fichier php permettant d'\ajouter le visiteur
+        String myUrl="https://mancisidor.alwaysdata.net/API/addVisiteur.php?";
+        //informations à transmettre pour effectuer l'ajout
+        String params =
+                "id="+unVisiteur.getId()+
+                        "&nom="+unVisiteur.getNom()+
+                        "&prenom="+unVisiteur.getPrenom()+
+                        "&login="+unVisiteur.getLogin()+
+                        "&mdp="+unVisiteur.getMdp()+
+                        "&adresse="+unVisiteur.getAdresse()+
+                        "&cp="+unVisiteur.getCp()+
+                        "&ville="+unVisiteur.getVille()+
+                        "&dateEmbauche="+unVisiteur.getDateEmbauche();
+        Log.d("requete",params);
+
+        HttpPostRequest postRequest = new HttpPostRequest();
+        try{
+            result = postRequest.execute(new String []{myUrl, params}).get();
+            //Log.d("resultat",result.);
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }*/
 
 }
