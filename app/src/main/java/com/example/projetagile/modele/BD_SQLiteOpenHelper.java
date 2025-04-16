@@ -16,15 +16,15 @@ public class BD_SQLiteOpenHelper extends SQLiteOpenHelper {
             ");\n\n";
     private static final String tableSession =
             "CREATE TABLE Session(\n" +
-            "        id          Int  Int  NOT NULL ,\n" +
-            "        nomSession  Varchar (100) NOT NULL ,\n" +
-            "        dateSession Date NOT NULL ,\n" +
-            "        heureDebut  Time NOT NULL ,\n" +
-            "        heureFin    Time NOT NULL ,\n" +
-            "        prix        Float NOT NULL ,\n" +
-            "        nbPlaces    Int NOT NULL\n" +
-            "    ,CONSTRAINT Session_PK PRIMARY KEY (id)\n" +
-            ");\n\n";
+                    "        id          INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
+                    "        nomSession  VARCHAR(100) NOT NULL,\n" +
+                    "        dateSession DATE NOT NULL,\n" +
+                    "        heureDebut  TIME NOT NULL,\n" +
+                    "        heureFin    TIME NOT NULL,\n" +
+                    "        prix        FLOAT NOT NULL,\n" +
+                    "        nbPlaces    INT NOT NULL\n" +
+                    ");\n\n";
+
 
     private static final String tableType =
             "CREATE TABLE Type(\n" +
