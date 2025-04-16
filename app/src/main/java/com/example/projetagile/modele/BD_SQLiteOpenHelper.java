@@ -57,8 +57,8 @@ public class BD_SQLiteOpenHelper extends SQLiteOpenHelper {
 
     private static final String tableProposer =
             "CREATE TABLE Proposer(\n" +
-            "        id         Int NOT NULL ,\n" +
-            "        id_Session Int NOT NULL\n" +
+            "        id         Int NOT NULL  ,\n" +
+            "        id_Session Int NOT NULL \n" +
             "    ,CONSTRAINT Proposer_PK PRIMARY KEY (id,id_Session)\n" +
             "\n" +
             "    ,CONSTRAINT Proposer_Recette_FK FOREIGN KEY (id) REFERENCES Recette(id)\n" +
@@ -123,11 +123,11 @@ public class BD_SQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL(tableProposer);
 
         db.execSQL(jdtUtilisateur);
-        db.execSQL(jdtType);
-        db.execSQL(jdtSession);
-        db.execSQL(jdtRecette);
-        db.execSQL(jdtReserver);
-        db.execSQL(jdtProposer);
+        //db.execSQL(jdtType);
+        //db.execSQL(jdtSession);
+        //db.execSQL(jdtRecette);
+        //db.execSQL(jdtReserver);
+        //db.execSQL(jdtProposer);
 
 
         Log.d("log","base de test cree");
